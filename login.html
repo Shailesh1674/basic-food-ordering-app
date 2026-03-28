@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Foodie Delight</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .auth-container { max-width: 500px; margin: 50px auto; padding: 30px; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .auth-container h2 { text-align: center; margin-bottom: 20px; color: #ff4757; }
+        .auth-form .form-group { margin-bottom: 15px; }
+        .auth-form label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .auth-form input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; }
+        .auth-form .btn-primary { width: 100%; margin-top: 10px; }
+        .auth-links { text-align: center; margin-top: 20px; }
+        .auth-links a { color: #ff4757; text-decoration: none; font-weight: bold; }
+        .auth-links a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body class="auth-page">
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo" onerror="this.src=''; this.alt='🍔'">
+                <h1>Foodie Delight</h1>
+            </div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="login.html" class="active">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <h2>Welcome Back</h2>
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+                <div class="auth-links">
+                    <p>Don't have an account? <a href="register.html">Register here</a></p>
+                    <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Admin Demo: admin@foodie.com / admin123</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Foodie Delight. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
