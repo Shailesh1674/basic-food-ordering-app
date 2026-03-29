@@ -163,6 +163,32 @@ function updateNavigation() {
     const navLinks = document.querySelector('.nav-links');
     if (!navLinks) return;
     
+    // Create Hamburger Menu if it doesn't exist
+    const nav = document.querySelector('nav');
+    let mobileMenu = document.getElementById('mobile-menu');
+    if (!mobileMenu && nav) {
+        mobileMenu = document.createElement('div');
+        mobileMenu.id = 'mobile-menu';
+        mobileMenu.className = 'menu-toggle';
+        mobileMenu.innerHTML = '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
+        nav.insertBefore(mobileMenu, navLinks);
+        
+        mobileMenu.addEventListener('click', function() {
+            this.classList.toggle('is-active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+        
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('is-active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    }
+
     // Remove existing login/register links if we are injecting them dynamically to avoid duplicates
     const links = navLinks.querySelectorAll('li');
     links.forEach(li => {
